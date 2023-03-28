@@ -1,7 +1,7 @@
-```
+
 # using the SERVICE module
 you can manage start, stop, restart in a partticular order 
-
+```
 ---
 - name: hosts
   hosts: all
@@ -16,11 +16,10 @@ you can manage start, stop, restart in a partticular order
 
 ```
 
-```
 # command module
 
 the comman module is used to exect a comman on a remote node
-
+```
 ---
 - name: hosts
   hosts: all
@@ -38,18 +37,18 @@ the comman module is used to exect a comman on a remote node
       command: src=/source_file dest=/destination   # to copy file from source to destination
 ```
 
-```
 ## script 
 
 runs a local script on a remote node after transferring it 
-
+```
     - name: Run a script on remote server
       command: /some/local/script.sh -arg1 -arg2
 
 ```
-```
+
 ### lineinfile
 used to find a line in file and replace it or add it if it doesnt exist
+```
 - 
   name: Add DNS server to reslv.conf
   hosts: all
@@ -65,9 +64,9 @@ used to find a line in file and replace it or add it if it doesnt exist
         create: true
 
 ```
-```
-## user module
 
+## user module
+```
 - name: "add new user"
       user:
         name: 'web_user'
