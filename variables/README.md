@@ -1,9 +1,10 @@
 # we use variables to store information that varies with each hosts
 
 # example
+```
 web1 ansible_host=server1.company.com ansible_connection=ssh ansible_ssh_pass=Puw@
 web2 ansible_host=server1.company.com ansible_connection=ssh ansible_ssh_pass=Puw@
-
+```
 # another example
 
 -
