@@ -2,7 +2,6 @@
 # using the SERVICE module
 you can manage start, stop, restart in a partticular order 
 
-```
 ---
 - name: hosts
   hosts: all
