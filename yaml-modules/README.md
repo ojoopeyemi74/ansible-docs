@@ -47,5 +47,17 @@ runs a local script on a remote node after transferring it
       command: /some/local/script.sh -arg1 -arg2
 
 ```
+```
+### lineinfile
+used to find a line in file and replace it or add it if it doesnt exist
+- 
+  name: Add DNS server to reslv.conf
+  hosts: all
+  tasks:
+    - lineinfile:
+        path: /etc/resolv.conf
+        line: 'nameserver 10.0.25.10'
+
+```
 
 
