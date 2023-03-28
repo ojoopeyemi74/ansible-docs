@@ -31,14 +31,12 @@ web2 ansible_host=server1.company.com ansible_connection=ssh ansible_ssh_pass=Pu
 ```
 # another example, having the variable in the play
 ```
----
 - hosts: localhost
-  tasks:
   vars:
-   car_model: BMW M3
-   country_name: USA
-   title: 'Systems Engineer'
-   tasks:
+    car_model: 'BMW M3'
+    country_name: USA
+    title: 'Systems Engineer'
+  tasks:
     - command: 'echo "My car is {{ car_model }}"'
     - command: 'echo "I live in the {{ country_name }}"'
     - command: 'echo "I work as a {{ title }}"'
