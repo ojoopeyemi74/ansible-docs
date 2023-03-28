@@ -58,6 +58,22 @@ used to find a line in file and replace it or add it if it doesnt exist
         path: /etc/resolv.conf
         line: 'nameserver 10.0.25.10'
 
+    - name: "Create or update index.html file."
+      lineinfile:
+        path: /var/www/html/index.html 
+        line: "Welcome to ansible-beginning course"
+        create: true
+
+```
+```
+## user module
+
+- name: "add new user"
+      user:
+        name: 'web_user'
+        uid: 1040
+        group: 'developers'
+
 ```
 
 
