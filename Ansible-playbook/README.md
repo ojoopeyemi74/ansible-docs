@@ -17,6 +17,12 @@ target2 ansible_host=172.31.42.5
 # Run ansible-playbook
 ansible-playbook playbook.yaml -i inventory.txt
 
+# different inventory parameters such as 
+ansible_connection     - for ssh/winrm/localhost
+ansible_port           - 22/6986
+ansible_user           - root/admin
+ansible-ssh_pass       - password
+
 # to text connectivity
 ansible all -m ping -i inventory.txt
 or 

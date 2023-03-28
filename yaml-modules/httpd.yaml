@@ -1,0 +1,12 @@
+---
+- name: hosts
+  hosts: all
+  become: yes
+  tasks:
+    - name: Execute a script
+      script: /tmp/install_script.sh
+    - name: Start httpd
+      service:
+        name: httpd
+        state: started
+
