@@ -17,7 +17,7 @@ web2 ansible_host=server1.company.com ansible_connection=ssh ansible_ssh_pass=Pu
         path: /etc/reslov.conf
         line: 'nameserver 10.0.2.0.4'
 ```
-# to use the variable
+# to use the variable having the variable in the play
 ```
 -
   name: Add DNS server to resolv.conf
@@ -28,6 +28,21 @@ web2 ansible_host=server1.company.com ansible_connection=ssh ansible_ssh_pass=Pu
     - lininfile:
         path: /etc/reslov.conf
         line: 'nameserver {{ dns_server }}'  # replace the varrible in a {{}}
+```
+# another example, having the variable in the play
+```
+---
+- hosts: localhost
+  tasks:
+  vars:
+   car_model: BMW M3
+   country_name: USA
+   title: 'Systems Engineer'
+   tasks:
+    - command: 'echo "My car is {{ car_model }}"'
+    - command: 'echo "I live in the {{ country_name }}"'
+    - command: 'echo "I work as a {{ title }}"'
+
 ```
 # another example
 ```
