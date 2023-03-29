@@ -79,4 +79,41 @@ exaples:
          with_url:
          with_mongodb:
 ```
+# Examples of with_*
+```
+---
+-  name: 'Print list of fruits'
+   hosts: localhost
+   vars:
+     fruits:
+       - Apple
+       - Banana
+       - Grapes
+       - Orange
+   tasks:
+     - command: 'echo "{{ item }}"'
+       with_items: '{{ fruits }}'
+
+```
+# with_* example
+installing multiple packages on the target using loop with the with_* 
+
+```
+---
+- name: 'Install required packages'
+  hosts: localhost
+  become: yes
+  vars:
+    packages:
+      - httpd
+      - make
+      - vim
+  tasks:
+    - yum:
+        name: '{{ item }}'
+        state: present
+      with_items: '{{ packages }}'
+
+```
+
 you can always have a lookup plugins which can be with the with_* directive
