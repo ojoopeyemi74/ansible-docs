@@ -27,3 +27,27 @@ but as we know different OS uses different package manager, e.g Debian uses apt 
             ansible-distribution_version == "16.04" # we use the and to satisfy both conditions
 
 ```
+# Example of when- install nginx when the tasks is node02
+
+```
+#inventory.txt file
+
+node01 ansible_host=node01 ansible_ssh_pass=caleston123
+node02 ansible_host=node02 ansible_ssh_pass=caleston123
+[web_nodes]
+node01
+node02
+```
+
+# playbook
+```
+---
+-  name: 'Execute a script on all web server nodes'
+   hosts: all
+   become: yes
+   tasks:
+     -  service: 'name=nginx state=started'
+        when: 'ansible_host=="node02"'
+
+```
+
