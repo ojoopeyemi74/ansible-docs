@@ -50,4 +50,22 @@ node02
         when: 'ansible_host=="node02"'
 
 ```
+# when example
+#print i am a child when age is <18 and print i am an adult when age is >=18
+```
+---
+- name: 'Am I an Adult or a Child?'
+  hosts: localhost
+  vars:
+    age: 25
+  tasks:
+    - name: I am a Child
+      command: 'echo "I am a Child"'
+      when: 'age < 18'
+    - name: I am an Adult
+      command: 'echo "I am an Adult"'
+      when: 'age >= 18'
+
+```
+
 
