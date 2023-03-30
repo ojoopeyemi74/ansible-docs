@@ -32,6 +32,16 @@ ansible_user           - root/admin
 ansible-ssh_pass       - password
 ```
 
+# ping test playbook
+```
+
+- name: ping test
+  hosts: all
+  tasks:
+   - ping: 
+  
+```
+
 # to text connectivity
 ```
 ansible all -m ping -i inventory.txt
