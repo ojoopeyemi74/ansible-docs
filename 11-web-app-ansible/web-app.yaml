@@ -1,0 +1,26 @@
+---
+- hosts: all
+  become: true
+  tasks: 
+ 
+  - name: install python3 and pip3 dependencies and php packages
+    ansible.builtin.apt:
+      name: 
+       - apache2  
+       - libapache2-mod-php
+       - python3-pip
+       - build-essential
+       - zlib1g-dev
+       - libncurses5-dev
+       - libgdbm-dev
+       - libnss3-dev
+       - libssl-dev
+       - libreadline-dev 
+       - libffi-dev
+       - libsqlite3-dev
+       - wget
+       - libbz2-dev
+      state: latest
+      update_cache: yes
+    when: ansible_distribution == "Debian"
+  
