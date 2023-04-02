@@ -1,0 +1,57 @@
+--- 
+sudo apt update
+
+sudo apt install python3-pip
+
+sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
+
+python3 --version
+
+pip3 --version
+---
+
+---
+sudo apt install wget
+
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.22-1_all.deb
+
+sudo apt install ./mysql-apt-config_0.8.22-1_all.deb
+
+sudo apt update
+
+sudo apt install mysql-server
+
+sudo service mysql status
+
+mysql -u root -p
+
+CREATE DATABASE employee_db;
+
+CREATE USER 'db_user'@'localhost' IDENTIFIED BY 'Passw0rd';
+
+GRANT ALL ON employee_db.* TO 'db_user'@'localhost';
+
+USE employee_db;
+
+CREATE TABLE employees (name VARCHAR(20));
+
+INSERT INTO employees VALUES ('JOHN');
+
+
+---
+root
+
+pip3 install flask
+
+pip3 install flask-mysql
+
+--
+root
+
+copy app.py in a file
+
+---
+
+export FLASK_APP=app.py
+
+flask run --host=0.0.0.0

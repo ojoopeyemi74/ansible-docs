@@ -50,3 +50,8 @@ ansible <target-name> -m ping -i inventory.txt
 ```
 
 
+Emmanuel74!!!
+
+
+CREATE USER 'db_user'@localhost' IDENTIFIED BY 'Emmanuel74!!!';
+    '> GRANT ALL ON employee_db. * 10 * 'db_user'@'localhost';

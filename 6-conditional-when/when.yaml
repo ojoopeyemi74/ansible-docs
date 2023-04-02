@@ -7,12 +7,35 @@
     apt: 
      update_cache: yes
     when: ansible_distribution == "Ubuntu"
-  #  when: ansible_distribution in ["Ubuntu", "Debian"] if you have 2 servers
+  # when: ansible_distribution in ["Ubuntu", "Debian"] if you have 2 servers
   # it will work because both servers has apt 
+     
+  # when: ansible_distribution == "CentOS" ansible_distribution_version == "7.9" 
+  # we could use this to target a specific version
 
   - name: install apache2 package
     apt:
       name: apache2
       state: latest
     when: ansible_distribution == "Ubuntu"
+
+# installing httpd and update on a CentOS 
+
+
+  - name: update repository index on CentOS
+    yum:
+      update_cache: yes
+    when: ansible_distribution == "CentOS" 
+
+  - name: Install all the packages
+    yum:
+       name: httpd
+    when: ansible_distribution == "CentOS"
+    
+  
+  - name: add php support for httpd in CentOs
+    yum:
+       name: php
+       state: latest
+    when: ansible_distribution == "CentOS"
   

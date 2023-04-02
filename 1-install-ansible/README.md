@@ -41,7 +41,44 @@ sudo apt-get install python
 
 python3 --version
 
+Step 5: Install PIP ( Package Manager )
+
+sudo apt install python3-pip
+
+pip3 --version
+
 ```
+
+# Installing Python3 dependencies on Debian
+sudo apt update
+
+sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
+
+sudo apt install python3 -y
+
+wget https://www.python.org/ftp/python/3.11.1/Python-3.11.1.tgz
+
+tar -xvf Python-3.11.1.tgz
+
+cd Python-3.11.1
+
+#Next, The -–enable-optimizations option runs multiple tests and optimizes the Python binary. Then run the make command to compile the Python  source code. This takes quite a while, so you might consider taking a break at this point.
+
+sudo ./configure --enable-optimizations
+
+sudo make -j 2
+
+sudo make altinstall
+
+python3.11 -V
+
+Step 5: Install PIP ( Package Manager )
+
+sudo apt install python3-pip
+
+pip3 --version
+
+
 
 
 # Configure SSH Access from controller to Ansible Hosts machines
