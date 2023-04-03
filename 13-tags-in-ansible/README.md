@@ -84,3 +84,7 @@ with this example it will run on the specified tasks
 ```
 ansible-playbook filename.yaml --tags "debian,httpd" -i inventory
 ```
+# you can list all your tags using
+```
+ansible-playbook site.yml --list-tags -i inventory 
+```
