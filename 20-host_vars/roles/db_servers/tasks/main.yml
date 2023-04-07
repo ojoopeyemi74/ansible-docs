@@ -1,0 +1,12 @@
+- name: install mariadb package (CentOS)
+  tags: mariadb,centos,db
+  ansible.builtin.yum:
+    name: mariadb
+    state: latest
+  when: ansible_distribution == "CentOS"
+
+- name: install mariadb package on (Debian)
+  tags: db,mariadb,debian
+  ansible.builtin.apt:
+    name: mariadb-server
+  when: ansible_distribution == "Debian"
